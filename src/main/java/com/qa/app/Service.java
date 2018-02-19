@@ -69,18 +69,18 @@ public class Service {
 	}
 
 	public int searchForAccntByName(String string) {
-		int count = 0;
+/*		int count = 0;
 		if(isMapEmptyOrNull()) {
 			
 		}else {
-			System.out.println("map" + accountsMap);
-			System.out.println("map1" + accountsMap.get(0));
-			for(int i=1; i<=accountsMap.size();i++) {
-				if(accountsMap.get(i).getFirstName().equalsIgnoreCase(string)) {
+			accountsMap.forEach((k,v) -> v.getFirstName().equals(string));
+			for(Account accnt: accountsMap.values()) {
+				System.out.println(accnt.toString());
+				if(accnt.getFirstName().equalsIgnoreCase(string)) {
 					count++;
 				}
 			}
-		}
-		return count;
+		}*/
+		return (int) accountsMap.values().stream().filter(eachAccount->eachAccount.getFirstName().equals(string)).count();
 	}
 }
