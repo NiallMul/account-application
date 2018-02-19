@@ -1,6 +1,6 @@
 package com.qa.app;
 
-import org.json.simple.JSONObject;
+import com.google.gson.Gson;
 
 public class App {
 	public static void main(String[] args) {
@@ -11,9 +11,9 @@ public class App {
 		service.addAccount("Tony", "Shannon");
 		service.addAccount("Ian", "Cunningham");
 		
-		JSONObject jObject = new JSONObject();
-		jObject.put(1, service.getMap());
-		System.out.println(jObject.get(1).toString());
+		Gson gson = new Gson();
+		String list = gson.toJson(service.getMap());
+		System.out.println(list);
 		
 		//made a change
 		/*
