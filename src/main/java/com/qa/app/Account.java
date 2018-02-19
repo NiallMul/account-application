@@ -80,6 +80,6 @@ public class Account {
 	}
 	@Override
 	public String toString() {
-		return acccountNumber+"\n"+firstName+"\n"+lastName;
+		return acccountNumber+" "+firstName+" "+lastName;
 	}
 }
