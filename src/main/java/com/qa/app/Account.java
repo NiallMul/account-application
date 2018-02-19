@@ -2,7 +2,7 @@ package com.qa.app;
 
 public class Account {
 	private String firstName, lastName, acccountNumber;
-
+//hello
 	public Account() {
 		super();
 	}
@@ -78,5 +78,8 @@ public class Account {
 			return false;
 		return true;
 	}
-	
+	@Override
+	public String toString() {
+		return acccountNumber+" "+firstName+" "+lastName;
+	}
 }

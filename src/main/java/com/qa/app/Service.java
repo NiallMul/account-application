@@ -2,7 +2,7 @@ package com.qa.app;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//hello
 public class Service {
 	private Map<Integer, Account> accountsMap;
 	
@@ -43,11 +43,28 @@ public class Service {
 			accountsMap.remove(key);
 		}
 	}
+	public Map<Integer,Account> getMap(){
+		if (isMapEmptyOrNull()) {
+
+		} else {
+			return accountsMap;
+		}
+		return accountsMap = new HashMap<Integer,Account>();
+	}
 	
 	public boolean isMapEmptyOrNull(){
 		if(accountsMap == null||accountsMap.size()<=0 )
 			return true;
 		else
 			return false;
+	}
+	@Override
+	public String toString() {
+		String returnString = "";
+		if(isMapEmptyOrNull()) {
+		for (int i = 0; i<=accountsMap.size();i++)
+			returnString+=accountsMap.get(i).toString();
+		}
+		return returnString;
 	}
 }
