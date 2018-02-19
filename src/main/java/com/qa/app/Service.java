@@ -67,4 +67,20 @@ public class Service {
 		}
 		return returnString;
 	}
+
+	public int searchForAccntByName(String string) {
+		int count = 0;
+		if(isMapEmptyOrNull()) {
+			
+		}else {
+			System.out.println("map" + accountsMap);
+			System.out.println("map1" + accountsMap.get(0));
+			for(int i=1; i<=accountsMap.size();i++) {
+				if(accountsMap.get(i).getFirstName().equalsIgnoreCase(string)) {
+					count++;
+				}
+			}
+		}
+		return count;
+	}
 }
